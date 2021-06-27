@@ -78,6 +78,8 @@ ECHO PRONTO!
 
 @PAUSE
 
+Exit
+
 
 :DET
 CLS
@@ -89,6 +91,8 @@ cmd/k flutter doctor -v
 ECHO PRONTO!
 
 @PAUSE
+
+Exit
 
 
 

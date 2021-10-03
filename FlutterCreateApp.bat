@@ -12,7 +12,8 @@ ECHO =========================================
 ECHO [1]GERAR PROJETO                        
 ECHO [2]VERIFICACAO DE COMPONENTES PADRAO      
 ECHO [3]VERIFICACAO DE COMPONENTES DETALHADA 
-ECHO [4] SAIR                                
+ECHO [4]ATUALIZAR O FLUTTER
+ECHO [5] SAIR                                
 ECHO =========================================
 
 SET /P $TYPE=OPCAO DESEJADA:
@@ -21,8 +22,9 @@ SET /P $TYPE=OPCAO DESEJADA:
 IF %$TYPE% EQU 1 GOTO NEW
 IF %$TYPE% EQU 2 GOTO PAD
 if %$TYPE% EQU 3 goto DET
-if %$TYPE% EQU 4 goto CLOSE
-if %TYPE%  NEQ 1 OR %TYPE%  NEQ 2 OR %TYPE%  NEQ 3 OR %TYPE%  NEQ 4  GOTO CLOSE
+if %$TYPE% EQU 4 goto UPD
+if %$TYPE% EQU 5 goto CLOSE
+if %TYPE%  NEQ 1 OR %TYPE%  NEQ 2 OR %TYPE%  NEQ 3 OR %TYPE%  NEQ 4 OR %TYPE%  NEQ 5  GOTO CLOSE
 
 
 
@@ -63,7 +65,7 @@ cd %$pasta%
 
 cmd/c flutter create --org %$PATHPROJECT% %$PROJECTNAME% 
 
-cmd/c code %$pasta%/%$PROJECTNAME% 
+//cmd/c code %$pasta%/%$PROJECTNAME% 
 
 goto CLOSE
 
@@ -78,8 +80,6 @@ ECHO PRONTO!
 
 @PAUSE
 
-Exit
-
 
 :DET
 CLS
@@ -92,8 +92,17 @@ ECHO PRONTO!
 
 @PAUSE
 
-Exit
 
+:UPD
+CLS
+ECHO ATUALIZANDO.........
+ECHO.
+cmd/k flutter upgrade --force
+
+
+ECHO PRONTO!
+
+@PAUSE
 
 
 :CLOSE

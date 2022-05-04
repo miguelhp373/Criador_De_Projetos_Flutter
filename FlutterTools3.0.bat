@@ -122,7 +122,7 @@ ECHO [3]EXIT
 ECHO -----------------------------------
 ECHO.
 
-SET /P $TYPE2=OPCAO DESEJADA:
+SET /P $TYPE2=OPTION SELECTED:
 
 if	%$TYPE2% EQU 1 	GOTO MD
 if	%$TYPE2% EQU 2 	GOTO CN
